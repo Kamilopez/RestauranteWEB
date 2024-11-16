@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Ingredientes\" />
+    <Folder Include="Pages\DetallesPlato\" />
+    <Folder Include="Pages\Pedidos\" />
+    <Folder Include="Pages\Proveedores\" />
+    <Folder Include="Pages\Platos\" />
+  </ItemGroup>
+
 </Project>
