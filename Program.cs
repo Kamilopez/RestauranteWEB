@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using RestauranteWEB.Data;
+
 namespace RestauranteWEB
 {
     public class Program
@@ -8,6 +11,11 @@ namespace RestauranteWEB
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            //Agregando el contexto RestaurantContext a la aplicacion
+            builder.Services.AddDbContext<RestaurantContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("RestaurantDB"))
+            );
 
             var app = builder.Build();
 
