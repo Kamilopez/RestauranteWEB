@@ -14,7 +14,7 @@ namespace RestauranteWEB
 
             //Agregando el contexto RestaurantContext a la aplicacion
             builder.Services.AddDbContext<RestaurantContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("RestaurantDB"))
+            options.UseSqlServer(builder.Configuration.GetConnectionString("RestoStockDB"))
             );
 
             var app = builder.Build();
