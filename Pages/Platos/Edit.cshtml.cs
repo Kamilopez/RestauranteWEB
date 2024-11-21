@@ -25,15 +25,15 @@ namespace RestauranteWEB.Pages.Platos
                 return NotFound();
             }
 
-            var Platos = await _context.Platos.FirstOrDefaultAsync(m => m.Id == id);
+            var platos = await _context.Platos.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Platos == null)
+            if (platos == null)
             {
                 return NotFound();
             }
             else
             {
-                Platos = Platos;
+                Platos = platos;
             }
             return Page();
         }
