@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestauranteWEB.Data;
 
@@ -10,9 +11,11 @@ using RestauranteWEB.Data;
 namespace RestauranteWEB.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    partial class RestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20241121050922_TodasLasDatabase")]
+    partial class TodasLasDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace RestauranteWEB.Migrations
 
                     b.HasIndex("PlatoId");
 
-                    b.ToTable("DetallesPlatos");
+                    b.ToTable("DetallesPlato");
                 });
 
             modelBuilder.Entity("RestauranteWEB.Models.Ingredientes", b =>
@@ -79,34 +82,6 @@ namespace RestauranteWEB.Migrations
                     b.ToTable("Ingredientes");
                 });
 
-            modelBuilder.Entity("RestauranteWEB.Models.Pedido", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FechaPedido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdProveedor")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProveedorId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProveedorId");
-
-                    b.ToTable("Pedidos");
-                });
-
             modelBuilder.Entity("RestauranteWEB.Models.Plato", b =>
                 {
                     b.Property<int>("Id")
@@ -131,43 +106,6 @@ namespace RestauranteWEB.Migrations
                     b.ToTable("Platos");
                 });
 
-            modelBuilder.Entity("RestauranteWEB.Models.Proveedor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Contacto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Direccion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombreEmpresa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ProveedorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Telefono")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProveedorId");
-
-                    b.ToTable("Proveedores");
-                });
-
             modelBuilder.Entity("RestauranteWEB.Models.DetallesPlato", b =>
                 {
                     b.HasOne("RestauranteWEB.Models.Ingredientes", "Ingredientes")
@@ -183,22 +121,6 @@ namespace RestauranteWEB.Migrations
                     b.Navigation("Plato");
                 });
 
-            modelBuilder.Entity("RestauranteWEB.Models.Pedido", b =>
-                {
-                    b.HasOne("RestauranteWEB.Models.Proveedor", "Proveedor")
-                        .WithMany()
-                        .HasForeignKey("ProveedorId");
-
-                    b.Navigation("Proveedor");
-                });
-
-            modelBuilder.Entity("RestauranteWEB.Models.Proveedor", b =>
-                {
-                    b.HasOne("RestauranteWEB.Models.Proveedor", null)
-                        .WithMany("Proveedores")
-                        .HasForeignKey("ProveedorId");
-                });
-
             modelBuilder.Entity("RestauranteWEB.Models.Ingredientes", b =>
                 {
                     b.Navigation("DetallesPlatos");
@@ -207,11 +129,6 @@ namespace RestauranteWEB.Migrations
             modelBuilder.Entity("RestauranteWEB.Models.Plato", b =>
                 {
                     b.Navigation("DetallesPlatos");
-                });
-
-            modelBuilder.Entity("RestauranteWEB.Models.Proveedor", b =>
-                {
-                    b.Navigation("Proveedores");
                 });
 #pragma warning restore 612, 618
         }

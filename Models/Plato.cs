@@ -10,5 +10,6 @@ namespace RestauranteWEB.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal PrecioVenta { get; set; }
         public string Descripcion {  get; set; }
+        public ICollection<DetallesPlato> DetallesPlatos { get; set; }
     }
 }

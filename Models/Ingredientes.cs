@@ -9,8 +9,9 @@ namespace RestauranteWEB.Models
         public int CantidadDisponible { get; set; }
         public int UnidadMedida { get; set; }
 
-        [Column(TypeName = "decimal(6,2)")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal PrecioUnitario { get; set; }
+        public ICollection<DetallesPlato> DetallesPlatos { get; set; }
 
     }
 }
