@@ -10,5 +10,6 @@ namespace RestauranteWEB.Data
         }
 
         public DbSet<Ingredientes> Ingredientes { get; set; }
+        public DbSet<Plato> Platos { get; set; }
     }
 }
