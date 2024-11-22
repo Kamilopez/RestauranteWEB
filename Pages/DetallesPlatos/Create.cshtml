@@ -1,0 +1,44 @@
+﻿@page
+@model RestauranteWEB.Pages.DetallesPlatos.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Crear </h1>
+
+<h4>Detalles Platos</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="DetallesPlatos.IdPlato" class="control-label"></label>
+				<input asp-for="DetallesPlatos.IdPlato" class="form-control" />
+				<span asp-validation-for="DetallesPlatos.IdPlato" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="DetallesPlatos.IdIngredientes" class="control-label"></label>
+				<input asp-for="DetallesPlatos.IdIngredientes" class="form-control" />
+				<span asp-validation-for="DetallesPlatos.IdIngredientes" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="DetallesPlatos.Cantidad" class="control-label"></label>
+				<input asp-for="DetallesPlatos.Cantidad" class="form-control" />
+				<span asp-validation-for="DetallesPlatos.Cantidad" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input type="submit" value="Create" class="btn btn-success" />
+				<a asp-page="Index" class="btn btn-primary">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
+
+}
