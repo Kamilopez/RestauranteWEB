@@ -19,7 +19,7 @@ namespace RestauranteWEB.Pages.Platos
 
         public async Task OnGetAsync()
         {
-            if (_context.Ingredientes != null)
+            if (_context.Platos != null)
             {
                 Platos = await _context.Platos.ToListAsync();
             }
