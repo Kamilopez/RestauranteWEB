@@ -20,19 +20,31 @@ namespace RestauranteWEB.Pages.Proveedores
         }
 
         [BindProperty]
-        public Proveedor Proveedores { get; set; } = default!;
+        public Proveedor Proveedor { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Proveedores == null || Proveedores == null)
+            if (!ModelState.IsValid || _context.Proveedores == null || Proveedor == null)
             {
                 return Page();
             }
 
-            _context.Proveedores.Add(Proveedores);
+            _context.Proveedores.Add(Proveedor);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
     }
 }
+    
+
+
+
+
+
+
+
+
+
+
+    
