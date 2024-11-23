@@ -26,7 +26,7 @@ namespace RestauranteWEB.Pages.Platos
         {
             if (!ModelState.IsValid || _context.Platos == null || Platos == null)
             {
-                return Page();
+               // return Page();
             }
 
             _context.Platos.Add(Platos);

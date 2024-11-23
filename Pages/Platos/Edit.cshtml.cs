@@ -42,7 +42,7 @@ namespace RestauranteWEB.Pages.Platos
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+               return Page();
             }
             _context.Attach(Platos).State = EntityState.Modified;
 
