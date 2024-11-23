@@ -20,3 +20,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.welcome-container {
+    background-image: url('/Images/arte.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+}
