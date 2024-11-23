@@ -26,7 +26,7 @@ namespace RestauranteWEB.Pages.Proveedores
         {
             if (!ModelState.IsValid || _context.Proveedores == null || Proveedor == null)
             {
-                return Page();
+              // return Page();
             }
 
             _context.Proveedores.Add(Proveedor);
@@ -36,7 +36,6 @@ namespace RestauranteWEB.Pages.Proveedores
         }
     }
 }
-    
 
 
 
@@ -47,4 +46,7 @@ namespace RestauranteWEB.Pages.Proveedores
 
 
 
-    
+
+
+
+
