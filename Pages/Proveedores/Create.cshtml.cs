@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RestauranteWEB.Data;
+using RestauranteWEB.Models;
 
 namespace RestauranteWEB.Pages.Proveedores
 {
@@ -19,16 +20,16 @@ namespace RestauranteWEB.Pages.Proveedores
         }
 
         [BindProperty]
-        public Plato Platos { get; set; } = default!;
+        public Proveedor Proveedores { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Platos == null || Platos == null)
+            if (!ModelState.IsValid || _context.Proveedores == null || Proveedores == null)
             {
                 return Page();
             }
 
-            _context.Platos.Add(Platos);
+            _context.Proveedores.Add(Proveedores);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
