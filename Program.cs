@@ -12,6 +12,12 @@ namespace RestauranteWEB
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";
+            });
+
             //Agregando el contexto RestaurantContext a la aplicacion
             builder.Services.AddDbContext<RestaurantContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("RestoStockDB"))
