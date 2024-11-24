@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Autenticacion.Pages.Account
+namespace RestauranteWEB.Pages.Account
 {
     public class LogoutModel : PageModel
     {
