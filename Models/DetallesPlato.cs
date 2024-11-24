@@ -3,9 +3,9 @@
     public class DetallesPlato
     {
         public int Id { get; set; }
-        public int IdPlato { get; set; }
+        public int PlatoId { get; set; }
         public Plato? Plato { get; set; } = default!;
-        public int IdIngredientes { get; set; }
+        public int IngredientesId { get; set; }
         public Ingredientes? Ingredientes { get; set; } = default!;
         public int Cantidad { get; set; }
     }
